@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Development - Pankaj Kumar</title>
+    <!-- Favicon link -->
+    <link rel="icon" href="https://placehold.co/32x32/ff9500/000000?text=BK" type="image/x-icon">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header: Contains the main navigation for the site -->
+    <header>
+        <nav class="container">
+            <div class="logo">Backend Dev</div>
+            <!-- Hamburger icon for mobile navigation -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Navigation links -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#apis">APIs</a></li>
+                <li><a href="#technologies">Tech Stack</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#wage-calculator">Wage Calculator</a></li> <!-- New nav link for the calculator -->
+                <li><a href="portfolio.html" style="color: #ff9500;">← Main Portfolio</a></li>
+                <!-- Link to main portfolio (renamed for clarity) -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section: Introduction to the backend development portfolio -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Backend Development</h1>
+                <p class="hero-subtitle">Scalable Server-Side Solutions</p>
+                <p class="hero-description">
+                    I specialize in building robust, scalable, and secure backend systems that power modern
+                    applications.
+                    From API development to database optimization, I create the foundation that makes your applications
+                    fast,
+                    reliable, and ready to scale.
+                </p>
+                <!-- Badges highlighting key backend technologies -->
+                <div class="tech-badges">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Redis</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">GraphQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section: Details the backend services offered -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Backend Services</h2>
+            <div class="services-grid">
+                <!-- Individual service cards -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">API Development</h3>
+                    <p class="service-description">
+                        Design and build RESTful APIs and GraphQL endpoints with proper authentication,
+                        rate limiting, and comprehensive documentation.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🗄️</div>
+                    <h3 class="service-title">Database Design</h3>
+                    <p class="service-description">
+                        Create efficient database schemas, optimize queries, and implement
+                        data migration strategies for both SQL and NoSQL databases.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3 class="service-title">Cloud Architecture</h3>
+                    <p class="service-description">
+                        Deploy and manage applications on AWS, Azure, or GCP with
+                        auto-scaling, load balancing, and high availability.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔐</div>
+                    <h3 class="service-title">Security Implementation</h3>
+                    <p class="service-description">
+                        Implement robust security measures including authentication,
+                        authorization, data encryption, and vulnerability assessments.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">
+                        Optimize application performance through caching strategies,
+                        database indexing, and efficient algorithm implementation.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3 class="service-title">System Integration</h3>
+                    <p class="service-description">
+                        Integrate third-party services, payment gateways, and
+                        external APIs to create comprehensive business solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section: Visual representation of typical backend system architecture -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="arch-diagram">
+                <div class="arch-layer">
+                    <div class="arch-item">Client Applications</div>
+                    <div class="arch-item">Web Interface</div>
+                    <div class="arch-item">Mobile Apps</div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="arch-item">Load Balancer</div>
+                    <div class="arch-item">API Gateway</div>
+                    <div class="arch-item">CDN</div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="arch-item">Microservices</div>
+                    <div class="arch-item">Authentication</div>
+                    <div class="arch-item">Business Logic</div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="arch-item">Cache Layer</div>
+                    <div class="arch-item">Message Queue</div>
+                    <div class="arch-item">Search Engine</div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="arch-item">Primary Database</div>
+                    <div class="arch-item">Read Replicas</div>
+                    <div class="arch-item">Data Warehouse</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Examples Section: Demonstrates various API interactions -->
+    <section id="apis" class="api-examples">
+        <div class="container">
+            <h2 class="section-title">API Examples</h2>
+            <div class="api-grid">
+                <!-- API card for User Authentication -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <span class="api-method">GET</span>
+                        <span>User Authentication</span>
+                    </div>
+                    <div class="api-content">
+                        <div class="code-block">
+                            <span class="code-comment">// JWT Authentication Endpoint</span>
+                            <br>POST /api/auth/login
+                            <br>{
+                            <br>"email": "user@example.com",
+                            <br>"password": "securepassword"
+                            <br>}
+                            <br><br>
+                            <span class="code-comment">// Response</span>
+                            <br>{
+                            <br>"success": true,
+                            <br>"token": "eyJhbGciOiJIUzI1NiIs...",
+                            <br>"user": {
+                            <br>"id": "12345",
+                            <br>"email": "user@example.com",
+                            <br>"role": "user"
+                            <br>}
+                            <br>}
+                        </div>
+                    </div>
+                </div>
+                <!-- API card for Data Processing -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <span class="api-method">POST</span>
+                        <span>Data Processing</span>
+                    </div>
+                    <div class="api-content">
+                        <div class="code-block">
+                            <span class="code-comment">// Bulk Data Processing</span>
+                            <br>POST /api/data/process
+                            <br>{
+                            <br>"data": [...],
+                            <br>"options": {
+                            <br>"validate": true,
+                            <br>"transform": "normalize"
+                            <br>}
+                            <br>}
+                            <br><br>
+                            <span class="code-comment">// Response</span>
+                            <br>{
+                            <br>"processed": 1500,
+                            <br>"errors": 0,
+                            <br>"jobId": "job_abc123"
+                            <br>}
+                        </div>
+                    </div>
+                </div>
+                <!-- API card for Real-time Analytics -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <span class="api-method">GET</span>
+                        <span>Real-time Analytics</span>
+                    </div>
+                    <div class="api-content">
+                        <div class="code-block">
+                            <span class="code-comment">// WebSocket Connection</span>
+                            <br>ws://api.example.com/analytics/live
+                            <br><br>
+                            <span class="code-comment">// Real-time Data Stream</span>
+                            <br>{
+                            <br>"event": "user_activity",
+                            <br>"data": {
+                            <br>"users_online": 1247,
+                            <br>"page_views": 15680,
+                            <br>"conversions": 23
+                            <br>},
+                            <br>"timestamp": "2025-06-28T10:30:00Z"
+                            <br>}
+                        </div>
+                    </div>
+                </div>
+                <!-- API card for File Upload -->
+                <div class="api-card">
+                    <div class="api-header">
+                        <span class="api-method">PUT</span>
+                        <span>File Upload</span>
+                    </div>
+                    <div class="api-content">
+                        <div class="code-block">
+                            <span class="code-comment">// Multipart File Upload</span>
+                            <br>POST /api/files/upload
+                            <br>Content-Type: multipart/form-data
+                            <br><br>
+                            <span class="code-comment">// Response</span>
+                            <br>{
+                            <br>"success": true,
+                            <br>"file": {
+                            <br>"id": "file_xyz789",
+                            <br>"url": "https://cdn.example.com/...",
+                            <br>"size": 2048576,
+                            <br>"type": "image/jpeg"
+                            <br>}
+                            <br>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section: Lists the technology stack used in backend development -->
+    <section id="technologies" class="technologies">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-categories">
+                <!-- Category: Runtime & Frameworks -->
+                <div class="tech-category">
+                    <h3>🖥️ Runtime & Frameworks</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Express.js</span>
+                        <span class="tech-item">Fastify</span>
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Django</span>
+                        <span class="tech-item">Flask</span>
+                        <span class="tech-item">FastAPI</span>
+                    </div>
+                </div>
+                <!-- Category: Databases -->
+                <div class="tech-category">
+                    <h3>🗄️ Databases</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">MongoDB</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">MySQL</span>
+                        <span class="tech-item">Redis</span>
+                        <span class="tech-item">Elasticsearch</span>
+                        <span class="tech-item">SQLite</span>
+                    </div>
+                </div>
+                <!-- Category: Cloud & DevOps -->
+                <div class="tech-category">
+                    <h3>☁️ Cloud & DevOps</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">Kubernetes</span>
+                        <span class="tech-item">Jenkins</span>
+                        <span class="tech-item">GitHub Actions</span>
+                        <span class="tech-item">Nginx</span>
+                    </div>
+                </div>
+                <!-- Category: Tools & Services -->
+                <div class="tech-category">
+                    <h3>🔧 Tools & Services</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">GraphQL</span>
+                        <span class="tech-item">WebSockets</span>
+                        <span class="tech-item">RabbitMQ</span>
+                        <span class="tech-item">Apache Kafka</span>
+                        <span class="tech-item">Stripe API</span>
+                        <span class="tech-item">SendGrid</span>
+                    </div>
+                </div>
+                <!-- Category: Security & Auth -->
+                <div class="tech-category">
+                    <h3>🔐 Security & Auth</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">JWT</span>
+                        <span class="tech-item">OAuth 2.0</span>
+                        <span class="tech-item">Passport.js</span>
+                        <span class="tech-item">bcrypt</span>
+                        <span class="tech-item">SSL/TLS</span>
+                        <span class="tech-item">Rate Limiting</span>
+                    </div>
+                </div>
+                <!-- Category: Monitoring & Testing -->
+                <div class="tech-category">
+                    <h3>📊 Monitoring & Testing</h3>
+                    <div class="tech-list">
+                        <span class="tech-item">Jest</span>
+                        <span class="tech-item">Mocha</span>
+                        <span class="tech-item">Postman</span>
+                        <span class="tech-item">New Relic</span>
+                        <span class="tech-item">Prometheus</span>
+                        <span class="tech-item">ELK Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section: Timeline of professional experience -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Backend Experience</h2>
+            <div class="timeline">
+                <!-- Individual timeline items -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Present</div>
+                    <h3 class="timeline-title">Senior Backend Developer</h3>
+                    <p class="timeline-description">
+                        Leading backend development for enterprise applications, implementing microservices
+                        architecture, and mentoring junior developers. Built scalable APIs handling 10M+ requests daily.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <h3 class="timeline-title">Full Stack Developer</h3>
+                    <p class="timeline-description">
+                        Developed and maintained RESTful APIs, implemented real-time features using WebSockets,
+                        and optimized database performance resulting in 40% faster query response times.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <h3 class="timeline-title">Backend Developer</h3>
+                    <p class="timeline-description">
+                        Built secure authentication systems, integrated payment gateways, and implemented
+                        caching strategies that improved application performance by 60%.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - 2022</div>
+                    <h3 class="timeline-title">Junior Developer</h3>
+                    <p class="timeline-description">
+                        Assisted in developing backend services, wrote unit tests, and participated in code reviews.
+                        Gained experience in database design and API documentation.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2021</div>
+                    <h3 class="timeline-title">Intern</h3>
+                    <p class="timeline-description">
+                        Supported the backend team in building APIs, learned about cloud deployment, and
+                        contributed to open-source projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics Section: Displays key performance indicators -->
+    <section class="metrics">
+        <div class="container">
+            <h2 class="section-title">Performance Metrics</h2>
+            <div class="metrics-grid">
+                <!-- Individual metric cards -->
+                <div class="metric-card">
+                    <h3 class="metric-label">API Response Time</h3>
+                    <p class="metric-number">120ms</p>
+                    <p class="metric-description">Average API response latency</p>
+                </div>
+                <div class="metric-card">
+                    <h3 class="metric-label">Database Query Time</h3>
+                    <p class="metric-number">45ms</p>
+                    <p class="metric-description">Average time for complex queries</p>
+                </div>
+                <div class="metric-card">
+                    <h3 class="metric-label">Error Rate</h3>
+                    <p class="metric-number">0.2%</p>
+                    <p class="metric-description">Percentage of failed requests</p>
+                </div>
+                <div class="metric-card">
+                    <h3 class="metric-label">User Satisfaction</h3>
+                    <p class="metric-number">95%</p>
+                    <p class="metric-description">Based on feedback and surveys</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wage Calculator Section: Interactive tool leveraging Gemini API -->
+    <section id="wage-calculator" class="wage-calculator">
+        <div class="container">
+            <h2 class="section-title">Working Wage Calculator</h2>
+            <div class="calculator-content">
+                <p class="hero-description" style="margin-bottom: 2rem;">
+                    Enter your hourly rate, hours worked, and an optional tax rate to get an estimated net wage.
+                    The Gemini AI will provide a breakdown and insights.
+                </p>
+                <!-- Input fields for wage calculation -->
+                <div class="form-group">
+                    <label for="hourlyRate">Hourly Rate ($)</label>
+                    <input type="number" id="hourlyRate" value="25" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="hoursWorked">Hours Worked (per week)</label>
+                    <input type="number" id="hoursWorked" value="40" min="0" step="0.5" required>
+                </div>
+                <div class="form-group">
+                    <label for="taxRate">Estimated Tax Rate (%)</label>
+                    <input type="number" id="taxRate" value="20" min="0" max="100" step="0.1">
+                </div>
+                <!-- Button to trigger calculation -->
+                <button id="calculateWageBtn" class="calculate-btn">Calculate Wage & Get Insights</button>
+                <!-- Area to display results and AI insights -->
+                <div id="wage-result" class="ai-modal-loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Calculating and generating insights...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section: Encourages visitors to make contact -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="section-title">Ready to Build Your Next Backend?</h2>
+            <p class="cta-description">
+                Let's work together to create a robust backend that scales with your business needs.
+            </p>
+            <a href="mailto:pankajbabu465@gmail.com" class="cta-button" target="_blank">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Footer: Copyright and general site information -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pankaj Kumar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll-to-Top Button: Allows quick navigation back to the top of the page -->
+    <button id="scroll-to-top" title="Go to top">↑</button>
+
+    <!-- Link to external JavaScript file for interactivity -->
+    <script src="script.js"></script>
+</body>
+
+</html>

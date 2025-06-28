@@ -1,0 +1,969 @@
+/* General Reset and Body Styles: Universal box-sizing, font-family, background, and text color */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Primary font for the website */
+    background: #0a0a0a;
+    /* Dark background color */
+    color: #ffffff;
+    /* White text color */
+    line-height: 1.6;
+    /* Standard line height for readability */
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
+}
+
+.container {
+    max-width: 1200px;
+    /* Maximum width for content container */
+    margin: 0 auto;
+    /* Centers the container horizontally */
+    padding: 0 20px;
+    /* Horizontal padding for responsiveness */
+}
+
+/* Header: Fixed header with transparent background and blur effect */
+header {
+    position: fixed;
+    /* Stays at the top when scrolling */
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    /* Semi-transparent dark background */
+    backdrop-filter: blur(10px);
+    /* Blurs content behind the header */
+    z-index: 1000;
+    /* Ensures header is on top of other content */
+    padding: 1rem 0;
+    /* Vertical padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+}
+
+nav {
+    display: flex;
+    /* Uses flexbox for internal layout */
+    justify-content: space-between;
+    /* Spreads items evenly */
+    align-items: center;
+    /* Vertically aligns items */
+}
+
+.logo {
+    font-size: 1.8rem;
+    /* Larger font size for the logo */
+    font-weight: bold;
+    /* Bold text */
+    color: #ff9500;
+    /* Accent color for the logo */
+    text-transform: uppercase;
+    /* Uppercase text */
+    letter-spacing: 1px;
+    /* Spaced out letters */
+}
+
+.nav-links {
+    display: flex;
+    /* Uses flexbox for navigation links */
+    list-style: none;
+    /* Removes bullet points from list items */
+    gap: 2.5rem;
+    /* Space between navigation items */
+}
+
+.nav-links a {
+    color: #ffffff;
+    /* Link text color */
+    text-decoration: none;
+    /* Removes underline from links */
+    transition: color 0.3s ease-in-out, transform 0.2s ease;
+    /* Smooth transition for hover effects */
+    font-weight: 500;
+    /* Medium font weight */
+    position: relative;
+    /* Needed for the pseudo-element underline */
+}
+
+.nav-links a::after {
+    /* Underline effect that expands on hover/active */
+    content: '';
+    position: absolute;
+    width: 0;
+    /* Starts hidden */
+    height: 2px;
+    background: #ff9500;
+    /* Accent color for underline */
+    bottom: -5px;
+    /* Position below the text */
+    left: 0;
+    transition: width 0.3s ease-in-out;
+    /* Smooth expansion */
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+    /* Expands to full width on hover/active */
+}
+
+.nav-links a:hover {
+    color: #ff9500;
+    /* Changes color on hover */
+    transform: translateY(-2px);
+    /* Subtle lift effect */
+}
+
+/* Hero Section: Full viewport height section with central content */
+.hero {
+    min-height: 100vh;
+    /* Minimum height of the viewport */
+    display: flex;
+    align-items: center;
+    /* Centers content vertically */
+    position: relative;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 149, 0, 0.1) 0%, transparent 50%);
+    /* Subtle radial gradient background */
+    padding-top: 80px;
+    /* Offset for the fixed header */
+}
+
+.hero-content {
+    text-align: center;
+    /* Centers text content */
+    animation: fadeInUp 1s ease-out;
+    /* Animation for content appearing */
+    max-width: 900px;
+    margin: 0 auto;
+    /* Centers content horizontally */
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    /* Large heading font size */
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ff9500, #ff6b00);
+    /* Gradient for text color */
+    -webkit-background-clip: text;
+    /* Clips background to text */
+    -webkit-text-fill-color: transparent;
+    /* Makes text transparent to show background */
+    background-clip: text;
+    font-weight: 900;
+    /* Very bold font */
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    /* Subtitle font size */
+    color: #cccccc;
+    /* Lighter grey color */
+    margin-bottom: 2rem;
+    font-weight: 600;
+    /* Semi-bold font */
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    /* Description font size */
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    /* Centers and adds margin below */
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+.tech-badges {
+    display: flex;
+    justify-content: center;
+    /* Centers badges horizontally */
+    flex-wrap: wrap;
+    /* Allows badges to wrap to next line */
+    gap: 1.2rem;
+    /* Space between badges */
+    margin-top: 2.5rem;
+    /* Margin above badges */
+}
+
+.tech-badge {
+    background: rgba(255, 149, 0, 0.1);
+    /* Semi-transparent accent background */
+    border: 1px solid #ff9500;
+    /* Accent border */
+    color: #ff9500;
+    /* Accent text color */
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    /* Rounded corners */
+    font-weight: 600;
+    animation: float 3s ease-in-out infinite;
+    /* Floating animation */
+    box-shadow: 0 3px 10px rgba(255, 149, 0, 0.1);
+    /* Subtle shadow */
+    cursor: default;
+    /* Default cursor as these are display only */
+}
+
+.tech-badge:nth-child(even) {
+    animation-delay: 1s;
+    /* Staggers the floating animation */
+}
+
+/* Section Title General Styles: Reusable style for all main section titles */
+.section-title {
+    font-size: 3rem;
+    /* Large section title font size */
+    text-align: center;
+    /* Centers the title */
+    margin-bottom: 4rem;
+    color: #ff9500;
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Uppercase text */
+}
+
+.section-title::after {
+    /* Underline effect for section titles */
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centers the underline */
+    width: 80px;
+    /* Width of the underline */
+    height: 4px;
+    /* Thickness of the underline */
+    background: #ff9500;
+    /* Accent color */
+    border-radius: 2px;
+}
+
+/* Services Section: Grid layout for service cards */
+.services {
+    padding: 8rem 0;
+    /* Vertical padding for the section */
+    background: rgba(255, 149, 0, 0.03);
+    /* Very subtle background tint */
+}
+
+.services-grid {
+    display: grid;
+    /* Uses grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Responsive columns */
+    gap: 2.5rem;
+    /* Space between grid items */
+}
+
+.service-card {
+    background: rgba(255, 149, 0, 0.05);
+    /* Semi-transparent background */
+    padding: 2.5rem;
+    border-radius: 15px;
+    /* Rounded corners */
+    border: 1px solid rgba(255, 149, 0, 0.2);
+    /* Subtle border */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth hover transitions */
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Shadow for depth */
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    /* Lifts the card on hover */
+    box-shadow: 0 25px 50px rgba(255, 149, 0, 0.15);
+    /* More pronounced shadow on hover */
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    /* Large icon size */
+    margin-bottom: 1.2rem;
+    color: #ff9500;
+    /* Accent color for icons */
+}
+
+.service-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.service-description {
+    color: #cccccc;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Architecture Section: Visual diagram of system components */
+.architecture {
+    padding: 8rem 0;
+}
+
+.arch-diagram {
+    background: rgba(255, 149, 0, 0.05);
+    border-radius: 20px;
+    padding: 3.5rem;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.arch-layer {
+    display: flex;
+    justify-content: space-around;
+    /* Distributes items with space around them */
+    align-items: center;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+    /* Allows items to wrap */
+    gap: 1.5rem;
+}
+
+.arch-item {
+    background: linear-gradient(135deg, #ff9500, #ff6b00);
+    /* Gradient background */
+    color: #000;
+    padding: 1.2rem 2.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    min-width: 160px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(255, 149, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.arch-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    /* Lift and slight scale on hover */
+}
+
+.arch-arrow {
+    font-size: 2.5rem;
+    color: #ff9500;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+/* API Examples Section: Display for code examples */
+.api-examples {
+    padding: 8rem 0;
+    background: rgba(255, 149, 0, 0.03);
+}
+
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 3rem;
+}
+
+.api-card {
+    background: rgba(255, 149, 0, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.api-header {
+    background: #ff9500;
+    color: #000;
+    padding: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.api-method {
+    background: #000;
+    color: #ff9500;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.api-content {
+    padding: 2rem;
+}
+
+.code-block {
+    background: #1a1a1a;
+    /* Dark background for code */
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-family: 'Courier New', monospace;
+    /* Monospace font for code */
+    font-size: 0.95rem;
+    color: #00ff00;
+    /* Green text for code (common syntax highlighting) */
+    overflow-x: auto;
+    /* Enables horizontal scrolling for long lines */
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.code-comment {
+    color: #888;
+    /* Grey color for comments */
+}
+
+/* Technologies Section: Categorized list of technologies */
+.technologies {
+    padding: 8rem 0;
+}
+
+.tech-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.tech-category {
+    background: rgba(255, 149, 0, 0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.tech-category:hover {
+    transform: translateY(-8px);
+    /* Lifts category card on hover */
+}
+
+.tech-category h3 {
+    color: #ff9500;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-item {
+    background: rgba(255, 149, 0, 0.1);
+    color: #ff9500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 149, 0, 0.3);
+    cursor: default;
+}
+
+/* Experience Section: Vertical timeline layout */
+.experience {
+    padding: 8rem 0;
+    background: rgba(255, 149, 0, 0.03);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    /* Vertical line in the center of the timeline */
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #ff9500;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 3rem 0;
+    background: rgba(255, 149, 0, 0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+    width: calc(50% - 2.5rem);
+    /* Takes up half the width minus gap for the line */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-8px);
+    /* Lifts timeline item on hover */
+}
+
+.timeline-item:nth-child(odd) {
+    /* Styles for items on the left side of the timeline */
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    /* Styles for items on the right side of the timeline */
+    left: calc(50% + 2.5rem);
+}
+
+.timeline-item::before {
+    /* Circular dot on the timeline line */
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #ff9500;
+    border-radius: 50%;
+    top: 2.5rem;
+    border: 3px solid #0a0a0a;
+    /* Border matches body background to blend */
+    z-index: 1;
+    /* Ensures dot is above the line */
+}
+
+.timeline-item:nth-child(odd)::before {
+    /* Positions dot for left items */
+    right: -3.7rem;
+}
+
+.timeline-item:nth-child(even)::before {
+    /* Positions dot for right items */
+    left: -3.7rem;
+}
+
+.timeline-date {
+    color: #ff9500;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.timeline-title {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.timeline-description {
+    color: #cccccc;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Performance Metrics Section: Grid for displaying key metrics */
+.metrics {
+    padding: 8rem 0;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.metric-card {
+    background: rgba(255, 149, 0, 0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px);
+    /* Lifts metric card on hover */
+}
+
+.metric-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff9500;
+    margin-bottom: 0.8rem;
+}
+
+.metric-label {
+    color: #cccccc;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.metric-description {
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+}
+
+/* Wage Calculator Section: Styles for the new LLM-powered calculator */
+.wage-calculator {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, rgba(255, 149, 0, 0.05) 0%, transparent 50%);
+}
+
+.wage-calculator .calculator-content {
+    background: rgba(255, 149, 0, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 149, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    margin: 0 auto;
+    /* Centers the calculator content */
+}
+
+.wage-calculator .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.wage-calculator label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #ff9500;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.wage-calculator input[type="number"] {
+    width: calc(100% - 24px);
+    /* Full width minus padding */
+    padding: 1.2rem;
+    background: rgba(255, 149, 0, 0.05);
+    border: 1px solid rgba(255, 149, 0, 0.3);
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.wage-calculator input[type="number"]:focus {
+    outline: none;
+    border-color: #ff9500;
+    box-shadow: 0 0 0 3px rgba(255, 149, 0, 0.3);
+}
+
+.calculate-btn {
+    background: #ff9500;
+    /* Accent color for button */
+    color: #000;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 149, 0, 0.2);
+    width: auto;
+    display: block;
+    /* Makes button a block element */
+    margin: 2rem auto 0;
+    /* Centers button */
+}
+
+.calculate-btn:hover {
+    background: #ff6b00;
+    /* Slightly darker accent on hover */
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(255, 149, 0, 0.4);
+}
+
+#wage-result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 149, 0, 0.1);
+    border: 1px solid rgba(255, 149, 0, 0.3);
+    border-radius: 10px;
+    color: #ffffff;
+    line-height: 1.7;
+    min-height: 100px;
+    /* Ensures space even when empty */
+    display: flex;
+    /* For centering loading spinner */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-align: center;
+    overflow-wrap: break-word;
+    /* Ensures text wraps within the box */
+}
+
+#wage-result.loading {
+    /* Style for loading state */
+    min-height: 150px;
+}
+
+/* Call to Action Section: Final call to action */
+.cta {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, transparent 50%);
+    text-align: center;
+}
+
+.cta-description {
+    font-size: 1.25rem;
+    color: #cccccc;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+    border: 2px solid #ff9500;
+    color: #ff9500;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 149, 0, 0.2);
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: #ff9500;
+    color: #000;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(255, 149, 0, 0.4);
+}
+
+/* Footer: Basic copyright information and styling */
+footer {
+    background: #000;
+    padding: 2.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 149, 0, 0.2);
+    font-size: 0.95rem;
+}
+
+/* Scroll-to-Top Button: Fixed button for easy page navigation */
+#scroll-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #ff9500;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    /* Hidden by default */
+    visibility: hidden;
+    /* Hidden by default */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 149, 0, 0.3);
+    border: none;
+}
+
+#scroll-to-top.show {
+    /* State when button is visible */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scroll-to-top:hover {
+    background: #ff6b00;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 149, 0, 0.5);
+}
+
+/* Animations: Keyframe definitions for various animated effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design: Media queries for adjusting layout on smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+        /* Adjusted font size for mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .timeline::before {
+        /* Adjusts timeline line position for mobile */
+        left: 20px;
+    }
+
+    .timeline-item {
+        /* Adjusts timeline item width and position for mobile */
+        width: calc(100% - 4rem);
+        left: 2rem !important;
+        padding: 1.5rem;
+    }
+
+    .timeline-item::before {
+        /* Adjusts timeline dot position for mobile */
+        left: -2.7rem !important;
+        top: 1.8rem;
+    }
+
+    .arch-layer {
+        flex-direction: column;
+        /* Stacks architecture items vertically */
+        gap: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        /* Smaller section titles on mobile */
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide main nav links by default on mobile */
+    }
+
+    .hamburger {
+        display: flex;
+        /* Show hamburger icon on mobile */
+    }
+
+    .nav-links.active {
+        /* Styles when mobile nav is active */
+        display: flex;
+    }
+
+    .wage-calculator .calculator-content {
+        /* Adjusts padding for calculator on mobile */
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Hamburger styles: Visuals for the hamburger menu icon */
+.hamburger {
+    display: none;
+    /* Hidden by default on desktop */
+    flex-direction: column;
+    /* Stacks the spans vertically */
+    cursor: pointer;
+    gap: 6px;
+    /* Space between spans */
+    margin-left: 1rem;
+    position: relative;
+    z-index: 1002;
+    /* Ensures it's clickable above other elements */
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #ff9500;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    /* Smooth transition for animation */
+}
+
+/* Hamburger active state animation: Transforms icon into an 'X' */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    /* Hides middle span */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Responsive nav menu: Styles for the mobile menu when active */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        top: 80px;
+        /* Positions below header */
+        right: 20px;
+        background: #181818;
+        flex-direction: column;
+        /* Stacks links vertically */
+        gap: 1.8rem;
+        padding: 2.5rem 3rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        z-index: 1001;
+        border: 1px solid rgba(255, 149, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+        /* Shows the menu when active */
+        animation: slideInRight 0.4s ease-out forwards;
+        /* Slide-in animation from right */
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
